@@ -9,7 +9,7 @@ Uses [vagrant](https://www.vagrantup.com/) to spin up a local VM, [ansible](http
 ### Develop your ansible playbook
 
 1. Edit ansible playbook [local.yml](local.yml) and make desired changes
-2. Edit tests and make desired changese
+2. Edit tests and make desired changes
 3. Spin up VM, start provisioning and tests:
 
 ```zsh
