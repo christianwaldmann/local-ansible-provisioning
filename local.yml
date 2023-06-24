@@ -1,0 +1,21 @@
+- hosts: local
+  connection: local
+  become: yes
+  become_user: root
+  tasks:
+      - name: apt update and upgrade
+        apt:
+            update_cache: yes
+            upgrade: "yes"
+      - name: apt install
+        apt:
+            name: [git, vim, htop, tmux, dstat, prometheus-node-exporter]
+            state: latest
+      - name: UFW allow ssh
+        ufw:
+            rule: allow
+            port: ssh
+      - name: UFW default deny
+        ufw:
+            state: enabled
+            policy: deny
